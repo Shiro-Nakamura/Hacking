@@ -3,10 +3,11 @@ import pwd
 
 DICTIONARY = "files/fasttrack.txt"
 ZIPFILE = "files/secure.zip"
+PATH = "/tmp/"
 
 def extract_zip(zFile, password):
     try:
-        zFile.extractall(pwd=password.encode())
+        zFile.extractall(path=PATH, pwd=password.encode())
         return password
     except Exception as e:
         return 
