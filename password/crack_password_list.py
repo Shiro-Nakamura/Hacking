@@ -21,7 +21,7 @@ def main():
     passfile = open(PASSFILELIST)
     for line in passfile.readlines():
         if SEPERATOR in line:
-            user = line.split(SEPERATOR)[0]
+            user = line.split(SEPERATOR)[0].strip(' ')
             print("[+] try crack password for user: {}".format(user))
             crypt_pass = line.split(SEPERATOR)[1].strip(' ')
             test_password(crypt_pass)
